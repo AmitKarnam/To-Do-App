@@ -83,7 +83,7 @@ def logout_view(request):
     logout(request)
     return render(request, "ToDo_App/logout.html")
 
-
+@login_required
 def ToDo(request):
     # Welcome to the main page of the WebApp.
     today = date.today()
