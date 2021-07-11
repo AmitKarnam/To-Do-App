@@ -18,8 +18,8 @@ def index(request):
         return HttpResponseRedirect(reverse('ToDo_App:ToDo'))
 
     # index.html is the landing page of the WebApp if user is not authenticated.
-    else:
-        return render(request, "ToDo_App/index.html")
+    
+    return render(request, "ToDo_App/index.html")
 
 
 def signup(request):
