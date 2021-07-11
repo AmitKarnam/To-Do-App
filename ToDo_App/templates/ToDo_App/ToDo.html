@@ -1,0 +1,76 @@
+{% extends "ToDo_App/layout.html" %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static 'ToDo_App/todo.css' %}">
+{% endblock %}
+
+{% block title %}
+To Do
+{% endblock %}
+
+{% block body %}
+
+<div style="margin:auto;width:40%;">
+
+<h1> Welcome  {{request.user.username }} </h1>
+<hr>
+
+
+<div class="add_tasks">
+    <h3> Add tasks : </h3>
+
+         {% if message %}
+            <div style="color:red"> {{ message }} </div>
+        {% endif %}
+
+        <form action="{% url 'ToDo_App:ToDo'  %} " method="post">
+
+            {% csrf_token %}
+            <input type="text" name="tasks" placeholder="Add To Do Tasks here.">
+            <b> <input type="submit" value="ADD" style="background-color:#d3d3d3;"> </b>
+        </form>
+</div>
+
+<br>
+<br>
+
+<div class="todo_list">
+    <h2 style="color:#838383;"> Today's Tasks  </h2>
+        <ul>
+            {% for task in tasks %}
+
+                {% if task.complete == True %}
+                    <div>
+                        <strike> <li> {{ task }}  </strike>  </li>
+                                <a href="{% url 'ToDo_App:Update_Task' task.id %} "> <button style="margin:5px;"> Update </button> </a>
+                                <a href="{% url 'ToDo_App:Delete_Task' task.id %} "> <button style="margin:5px;"> Delete </button> </a>
+                    </div>
+
+                {% else %}
+                    <div>
+                        <li>  {{ task }} </li>
+                            <a href="{% url 'ToDo_App:Update_Task' task.id %} "> <button style="margin:5px;"> Update </button> </a>
+                            <a href="{% url 'ToDo_App:Delete_Task' task.id %} "> <button style="margin:5px;"> Delete </button> </a>
+
+                    </div>
+
+                {% endif %}
+
+                <br>
+
+            {% empty %}
+                <h3> No tasks to perform currently.</h3>
+
+
+            {% endfor %}
+    </ul>
+
+    <br>
+    <button style="background-color:#d6d0d0;"> <a href="{% url 'ToDo_App:logout' %}" style=" color:black;"> LOGOUT </a> </button>
+    <br>
+    <br>
+
+</div>
+</div>
+{% endblock %}

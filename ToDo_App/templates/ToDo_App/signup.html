@@ -1,0 +1,50 @@
+{% extends "ToDo_App/layout.html" %}
+{% load static %}
+
+{% block css_files %}
+<link href="{% static 'ToDo_App/signup.css' %}" rel="stylesheet"  type="text/css" >
+{% endblock %}
+
+{% block title %}
+Sign Up
+{% endblock %}
+
+{% block body %}
+
+<div style="margin:auto;width:300px;">
+
+    <h1 class="heading"> SIGN UP</h1>
+    <hr>
+    <br>
+
+    <div class="content">
+
+        {% if message %}
+            <div style="color:red"> {{ message }} </div>
+        {% endif %}
+
+        <form  class="form" action="{% url 'ToDo_App:Sign_up' %}" method="post">
+           <br>
+            {% csrf_token %}
+            {{  form.as_p}}
+            <br>
+
+            <input style="color:#4a8bc8" type="submit" value="Sign Up" style="background-color:#d3d3d3; color:black;">
+        </form>
+        <br>
+
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="login_page">
+        <p style="font-size:20px;"> <b> Already existing User? </b> </p>
+        <button> <a href="{% url 'ToDo_App:Login_Page' %}">Login </a> </button>
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,81 @@
+
+.add_tasks{
+        padding:15px;
+        border-radius: 20px;
+        background: #dee7ed;
+        box-shadow:  8px 8px 12px #bababa,
+             -8px -8px 12px #ffffff;
+        color:#838383;
+        width:auto;
+}
+
+input[type=text],input[type=submit] {
+    padding:8px;
+    border:1px solid #9bd3f3;
+    color:#838383;
+    border-radius: 15px;
+    background: #9bd3f3;
+    box-shadow: inset 16px 16px 7px #8cbedb,
+            inset -16px -16px 7px #abe8ff;
+    width:auto;
+
+}
+
+input:focus,
+button:focus,
+select:focus,
+textarea:focus{
+  outline:none;
+}
+
+li{
+
+    padding:10px;
+    border:1px solid #dee7ed;
+    color:#000000 ;
+    border-radius: 50px;
+    background: #dee7ed;
+    box-shadow: inset 20px 20px 29px #bdc4c9,
+            inset -20px -20px 29px #ffffff;
+    width:auto;
+}
+
+button{
+    padding:5px;
+    margin:15px;
+    border:1px solid #dee7ed;
+    color:#dee7ed;
+    border-radius: 48px;
+    background: linear-gradient(145deg, #eef7fe, #c8d0d5);
+    box-shadow:  5px 5px 6px #cad2d8,
+             -5px -5px 6px #f2fcff;
+}
+
+@media only screen and (max-width:600px) {
+  input[type=text] {
+        padding:8px;
+        border:1px solid #9bd3f3;
+        color:#838383;
+        border-radius: 15px;
+        background: #9bd3f3;
+        box-shadow: inset 16px 16px 7px #8cbedb,
+            inset -16px -16px 7px #abe8ff;
+        width:100%;
+        margin-bottom:5px; }
+
+
+    input[type=submit] {
+        padding:8px;
+        border:1px solid #9bd3f3;
+        color:#838383;
+        border-radius: 15px;
+        background: #9bd3f3;
+        box-shadow: inset 16px 16px 7px #8cbedb,
+            inset -16px -16px 7px #abe8ff;
+        width:auto;
+
+    }
+
+}
+
+

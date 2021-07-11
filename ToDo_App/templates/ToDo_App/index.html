@@ -1,0 +1,29 @@
+{% extends "ToDo_App/layout.html" %}
+
+{% block title %}
+    To Do
+{% endblock %}
+
+{% block body %}
+
+<div style="margin:auto;width:300px;">
+
+    <h1> Welcome To Do!</h1>
+
+    <hr> <br>
+
+    <div class="mx-2">
+        <button> <a href="{% url 'ToDo_App:Sign_up' %}"> Sign Up</a> </button>
+
+        <button style="margin-left:50%;"> <a href="{% url 'ToDo_App:Login_Page' %}"> Login</a> </button>
+    </div>
+
+    <div>
+        <br>
+        <h3>If you want to try out the webapp, press login button. </h3> 
+        <h3>We have given out a set of tryout credentials to login.</h3>
+    </div>
+
+</div>
+
+{% endblock %}

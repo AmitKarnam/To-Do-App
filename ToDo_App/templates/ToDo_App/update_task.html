@@ -1,0 +1,26 @@
+{% extends 'ToDo_App/layout.html' %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static 'ToDo_App/update.css' %}">
+{% endblock %}
+
+{% block title %}
+Update
+{% endblock %}
+
+{% block body %}
+
+<div style="margin:auto;width:500px;">
+    <h1> Update </h1>
+    <hr>
+
+    <form method="POST" acion="">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" name="update" style="background-color:#d3d3d3; color:black; margin-left:1%;">
+    </form>
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,23 @@
+{% extends "ToDo_App/layout.html" %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static 'ToDo_App/logout.css' %}">
+{% endblock %}
+
+
+{% block title %}
+Log Out
+{% endblock %}
+
+{% block body %}
+
+<div style="margin:auto;width:300px;">
+
+    <h1> Successfully logged Out </h1> <hr>
+
+    <h2> Back to  <a href="{% url 'ToDo_App:Login_Page' %}"> Login </a> page?</h2>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+input[type=submit]{
+    padding:5px;
+    margin:15px;
+    border-radius: 28px;
+    border:1px solid #dee7ed;
+    color:#dee7ed
+    background: linear-gradient(145deg, #eef7fe, #c8d0d5);
+    box-shadow:  5px 5px 6px #cad2d8,
+             -5px -5px 6px #f2fcff;
+}
+
+input:focus,
+button:focus,
+select:focus,
+textarea:focus{
+  outline:none;
+}
+
+
+ input[type=text], input[type=password], input[type=email] {
+    padding:10px;
+    border-radius:10px;
+    border:1px solid grey;
+    height:30px;
+    width:auto;
+}
