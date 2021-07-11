@@ -25,7 +25,7 @@ SECRET_KEY = ')lsjlea0y-ar@muc4l$gc5ujxgc@9_04w@do(_41@osud@*i2k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['peaceful-plains-52013.herokuapp.com','127.0.0.1:8000']
 
 
 # Application definition
