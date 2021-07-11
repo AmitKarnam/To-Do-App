@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AnonymousUser, User
 from . import forms
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
@@ -15,6 +15,10 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     # Checks if the user is authenticated, if yes redirects them to ToDo Main Page.
     if request.user.is_authenticated:
+
+        if request.user == AnonymousUser:
+            return render(request, "ToDo_App/index.html")
+
         return HttpResponseRedirect(reverse('ToDo_App:ToDo'))
 
     # index.html is the landing page of the WebApp if user is not authenticated.
